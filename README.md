@@ -11,10 +11,10 @@ Much of the code used in this project is adapted from lecture material and was m
 ## Objective
 The project objective to create a web application with the following criteria:
 
-1.Create a basic Flask server
-2.Contains a REST API, (to perform CRUD operations - create,read,update,delete)
-3.One database table 
-4.Accompanying web interface, using AJAX calls, to perform these CRUD operations
+1. Create a basic Flask server
+2. Contains a REST API, (to perform CRUD operations - create,read,update,delete)
+3. One database table 
+4. Accompanying web interface, using AJAX calls, to perform these CRUD operations
 
 ## Getting Started
 1. If not already installed, download and install Python 3.
