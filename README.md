@@ -37,3 +37,36 @@ To run this repository you will need certain modules or packages. These are all 
 2. To check that connection has been made with the server, run `curl -i http://localhost:5000/` on a new command console. Do not run the above curl on the same console as the flask server. 
 3. To access the server, go to your browser of choice and copy in the following url `http://localhost:5000/`
 4. Go to the login page by copying `http://localhost:5000/login.html` into the url bar.
+
+## Database 
+
+This project required me to use CRUD operations on a database. MySQL was the database service used for this project.
+The below steps will allow you to create the same database.
+
+1. Download MySQL to your computer and open up the MySQL command line. Enter in your credentials to create a new database.
+2. Once MySQL is running, create a new database called `project_datarep` and then switch to this database `USE project_datarep`.
+3. Within that database, create a new table 'employees' with the below schema:
+
+```MySQL
+use project_datarep;
+
+create table employees (
+id int NOT NULL AUTO_INCREMENT,
+f_name varchar(15),
+s_name varchar(20),
+age int,
+emp_role varchar(20),
+salary int,
+PRIMARY KEY (id)
+);
+```
+4. Create a MySQL Configuration file called `dbconfig.py`. Populate with the below details. User & password should be replaced with your own username & password. 
+
+  ```Python
+  mysql = {
+    'host': 'localhost',
+    'user': 'user',
+    'password': 'password',
+    'database': 'project_datarep'
+    }
+  ```
