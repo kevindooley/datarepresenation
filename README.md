@@ -8,6 +8,8 @@ This project is worth 60% of the total marks for this module. All aspects of thi
 The project description is detailed in full on the GMIT Moodle page under the 'Project Description' PDF.
 Much of the code used in this project is adapted from lecture material and was my main source throughout. 
 
+I decided to base my application on a medical device company and the database table contains details on employees working for that company. The user will be able to add/delete new employees to the company as well as find them based on their ID number or even update the employees details. To access the website, there will be a login in required and also a further administration login to access employee details. 
+
 ## Objective
 The project objective to create a web application with the following criteria:
 
