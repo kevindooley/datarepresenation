@@ -1,6 +1,7 @@
 import mysql.connector
 import dbconfig as cfg
 
+# connecting to database without hard coding password, username etc
 class EmployeeDAO:
     db = ""
     def __init__(self):
@@ -12,7 +13,7 @@ class EmployeeDAO:
             )
         #print("connection made")
     
-
+#create
     def create(self, employee):
         cursor = self.db.cursor()
         sql="insert into employees (f_name,s_name, age,emp_role,salary) values (%s,%s,%s,%s,%s)"
@@ -51,6 +52,7 @@ class EmployeeDAO:
         result = cursor.fetchone()
         return self.convertToDictionary(result)
 
+#update
     def update(self, employee):
         cursor = self.db.cursor()
         sql="update employees set f_name=%s,s_name=%s, age=%s, emp_role=%s, salary=%s  where id = %s"
@@ -68,6 +70,7 @@ class EmployeeDAO:
         self.db.commit()
         return employee
 
+# delete by id 
     def delete(self, id):
         cursor = self.db.cursor()
         sql="delete from employees where id = %s"

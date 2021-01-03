@@ -3,6 +3,11 @@
         <title> View Employees</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
        
+        <style text="text/css">
+ 
+        div {background-color: #92a8d1;}
+
+        </style>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
@@ -35,21 +40,21 @@
                 </tr>
                 <tr>
                     <td></td><td>
-                        <button id="create-button" onclick="doCreate()">Create</button>
-                        <button id="update-button" onclick="doUpdate()">Update</button>
+                        <button class="btn btn-primary" id="create-button" onclick="doCreate()">Create</button>
+                        <button class="btn btn-primary" id="update-button" onclick="doUpdate()">Update</button>
                     </td>
                 </tr>
                 
             </table>
         </div>
         <div id="display">
-            <h2>Employees</h2>
-            <button onClick="showCreate()">Create</button>
-            <table id='employeeTable' class="table">
+            <h2 style="text-align:center">Employees at BioMed Inc.</h2>
+            <table id='employeeTable' class="table" class="thead-dark">
                 <tr>
                     <th>ID</th><th>First Name</th><th>Surname</th><th>Age</th><th>Employee Role</th><th>Salary</th><th>Update</th><th>Delete</th>
                 </tr>
             </table>
+            <button  class="btn btn-primary" onClick="showCreate()">Add/Create new Employee</button>
 
         </div>
 
@@ -246,9 +251,9 @@
                 var cell6 = rowElement.insertCell(5);
                 cell6.innerHTML = employee.salary
                 var cell7 = rowElement.insertCell(6);
-                cell7.innerHTML = '<button onclick="showUpdate(this)">Update</button>'
+                cell7.innerHTML = '<button class="btn btn-secondary" onclick="showUpdate(this)">Update</button>'
                 var cell8 = rowElement.insertCell(7);
-                cell8.innerHTML = '<button onclick=doDelete(this)>delete</button>'
+                cell8.innerHTML = '<button class="btn btn-secondary" onclick=doDelete(this)>Delete</button>'
 
                 }
                 populateTable()

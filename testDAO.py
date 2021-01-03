@@ -20,8 +20,8 @@ employee2 = {
 
 }
 
-returnValue = employeeDAO.create(employee)
-print(returnValue)
+#returnValue = employeeDAO.create(employee)
+#print(returnValue)
 # returnValue = employeeDAO.getAll()
 # print(returnValue)
 

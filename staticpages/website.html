@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+	<title>BioMed Inc.</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script>
+			// All javascript work for website.html in this document
+
+		/* function openform() is activiated when member button clicked
+		gets id popupForm from html and makes the element a block-level element using
+		.style.display = "block"*/
+		function openForm() {
+		document.getElementById("popupForm").style.display = "block";
+		}
+
+		/*closeForm() activated when cancel button clicked.
+		the login page will close once clicked.
+		gets id popupForm from html and "none" ensures the element will not be displayed*/
+		function closeForm() {
+		document.getElementById("popupForm").style.display="none";
+		}
+
+		/* create function called validate login which takes the the information entered into the input boxes
+		document.getElementById.value takes the inputs from each box via the id
+		id=email for the email input and id=password for password
+		if & if else statements to compare user input to expected & if field is empty
+		if details wrong. User must try again.
+		if correct - new window opens linking to another page*/
+
+
+		function validateLogin() {
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			if (email == "" || password == "") {
+				alert("Fields should not be empty");
+			} 
+			
+		else if (email == "kevindooley@gmit.com" && password == "galway") {
+			alert("LOGIN SUCCESSFUL");
+			window.location = "index.html";
+			return;
+			} 
+			
+		else {alert("Email and/or password are incorrect, please enter the valid details");
+			return;
+			}
+
+		}
+
+		/*function review() activated when user clicks review button
+		on click the text changes to the text on quotes and and also the text changes colour to red
+		The id=review taken from the html code and innerHTML changes text and .style.color changes the colour*/
+		function review() {
+			document.getElementById("review").innerHTML = "BioMed Inc. offer amazing life changing products that improved my quality of life."
+			document.getElementById("review").style.color = "red"
+			
+		}
+
+		/* when user hovers over this h1 section in webpage, employeeoffer() function activated
+		gets id=employee from the html and changes the text using .innerHTML
+		gets id=employee from the html and changes colour using style.color*/
+		function employeeoffer() {
+			document.getElementById("employee").innerHTML = "We are hiring across multiple functions"
+			document.getElementById("employee").style.color = "red"
+		}
+
+		/* when user hovers off that h1 section in webpage, normal() function activated
+		gets id=employee from html and changes the text using .innerHTML (returned to original text)
+		gets id=employee from and changes colour using style.color (returned to original colour)*/
+		function normal() {
+			document.getElementById("employee").innerHTML = "What We Offer Employees!"
+			document.getElementById("employee").style.color = "white"
+		}
+	</script>
+
+	<!--css styling for website-->
+	<style type="text/css">
+
+		body{
+			font-family: Arial, Helvetica, sans-serif;
+			}
+					
+		/* Style the header*/
+		header {
+				background-color: #0078d4; 
+				background-image: url("header1.jpg");
+				padding: 30px; 
+				text-align: center; 
+				font-size: 10px;
+				color: rgb(0, 0, 0); 
+				}
+			
+		/* article section of web page has below styling */
+		article {
+				text-align: center; 
+				color: white; 
+				background-color: #00b4d4;
+				}
+	
+		/* Clear floats after the columns */
+		/* after selector allows something be added after content*/
+		/* displays table 
+		and clear both ensures the nav clears floats either side so it fits on page better*/
+		section:after {
+					content: "";
+					display: table;
+					clear: both;
+					}	
+			
+		/* Style the footer */
+
+		footer {
+				background-color: #0078d4;
+				padding: 10px; 
+				text-align: center;
+				color: white;
+				}
+			
+		/* class = fb for facebook image & link in footer*/		
+			
+		.fb {
+			height: auto;
+			width: 30px;
+			}
+			
+		/* Style and fix the button on the admin button on page */
+		/* class=open-button is for the position of the member login button pm the webpage*/
+		.open-button {
+				background-color: #1c87c9;
+				color: white;
+				padding: 12px 20px;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer; /* mouse turns to pointer when over login*/
+				opacity: 0.8; 
+				position: fixed; /* fixed in position. always stays in the same place even if the page is scrolled.*/
+				top: 30px; 
+				right: 10px
+				}
+		   
+		/* Position the Popup form */
+		/* form is relative - positioned relative to its normal position.*/
+		.login-popup {
+				position: relative;
+				text-align: center;
+				width: 100%;
+				}
+		  
+		/* class=form-popup used for formatting the login form */
+		.form-popup {
+				display: none;
+				position: fixed;
+				left: 50%;
+				top:35%;
+				transform: translate(-45%,5%); 
+				border: 2px solid #666;
+				z-index: 9; 
+				}
+		  
+		/* class = from-container Styles for the form container */
+		.form-container {
+				max-width: 300px;
+				padding: 20px;
+				background-color: #fff;
+				}
+		  
+		.form-container input[type=button] {	/*  input with type=button in container*/
+				background-color: lightblue;			
+				color: white;							
+				width: 100px;							
+				height: 25px;							
+				cursor: pointer							/* cursor becomes point when hovering on button */	
+				}
+	
+		/* class = center to center review button in article section of homepage*/			
+		.center {		
+				text-align:center;	
+				}
+
+		nav {
+			float: left; /*float to column to left of page */
+			background-image: url("b1.jpg"); 
+			max-width: 100%;
+			height: 570px;
+			object-fit: cover;
+			padding: 20px;
+			color: rgb(0, 0, 0);
+		}
+
+		.font1 {
+			font-size: 12px;
+		}
+
+		.bold1 {
+			font-weight: bold;
+			color: blue;
+		}
+
+	</style>
+</head>
+
+<!-- body background color is shade of lightblue-->
+<body bgcolor="#48D1CC">
+
+	
+	<header>
+		<h1>BioMed Inc.</h1>
+		<h3>Improving quality of life with scientific/medical therapies and solutions</h3>
+		<p></p>
+		<h3>Mission: Bring life-changing therapies to patients around the world</h3>
+	</header>
+	
+	<!-- admin login button. Once clicked, javascript function activated-->
+	<input class="open-button" type="button" value="Administration Login" onclick="openForm()"
+	<!-- div created to hold popup of login screen-->
+	<div class="login-popup">
+		<!--div created for holding the form-->
+      <div class="form-popup" id="popupForm">
+		<!-- create form for the details to be inputted into-->
+		<form class="form-container" align="center">
+		<br>
+		<!-- input boxes for user. id email & id password taken from input and used to validate details-->
+		<!-- placeholder allows prior detail to be printed in the input boxes-->
+			<b>Username: </b><br>
+			<input type="email" name="email" placeholder="Enter Email" id="email" required><br>
+			<b>Password: </b><br>
+			<input type="password" name="password" placeholder="Enter Password" id="password" /><br>
+			<br/>
+			<!-- onclick = once the login button is clicked that validatelogin() function is called and details are validated-->
+			<input type="button" value="Login" onclick="validateLogin()"/>
+			<!-- onclick = once the cancel login button is clicked that closeform() function is called and form is closed-->
+			<input type="button" value="Cancel Login" onclick="closeForm()"/>
+		</div>
+	</div>
+	
+	<!--section tag defines section on the page-->
+	<section>
+	<!-- nav tag used mainly for links to other parts of websites.
+	But in this instance I have used it just for small sentences
+	to format it nicer-->
+		<nav>
+			<h3> BioMed Inc. - Life Made Easy</h3>
+			<h3> Core Values</h3>
+				<ul class="bold1"> <!-- ul = unordered list, li = defines list item -->
+					<li>Diversity</li>
+					<li>Innovation</li>
+					<li>Collaboration</li>
+					<li>Caring</li>
+					<li>Quality</li>
+				</ul>
+			<h3> Administration login: Access protected information</h3>
+				<ol class="font1">
+					<li>See database of employees working at BioMed Inc.</li>
+					<li>Add new employees i.e new hires</li>
+					<li>Update employee information i.e promotion/new role</li>
+					<li>Delete employees i.e employee leaving</li>	
+				</ol>
+			<h3>Join us today</h3>
+			<p>Become one of 40,000 employees worldwide improving the lives of those who need it most</p>
+		</nav>
+		
+		<article> 
+		<!-- article tag for self contained information-->
+		<!-- a tag used to allow user to click on the highlighted world and be redirected to another page. href used in the a tag and is used for hyperlink-->
+			<h1>Who We Are?</h1> <!--header 1 tag-->
+			<p>BioMed Inc. is a company dedicated to developing innovative solutions for our patients.<br></br> <!--line break-->
+			Our mission is to provide expert therapies and service to people in need. We specialise in stents and pacemakers.<br></br><!--line break-->
+			Our state of the art manufacturing facilities and highly skilled employees ensure that our products are of the highest quality. We are headquarted in Ireland and ship our products all over the world. 
+			</p>
+			<hr></hr> <!-- horizontal rule-->
+			
+			<!-- id=discount linked to both functions below to activate javascript
+			onmousover=discount() - when mouse hovers over section, discount() activated and text and colour change.
+			onmouseout = noDiscount() - when mouse goes off noDiscount() activated and text and colour go back to normal-->
+			<h1 id="employee" onmouseover="employeeoffer()" onmouseout="normal()">What We Offer Employees!</h1>
+			
+			<ul> <!-- ul = unordered list, li = defines list item -->
+				<li>Competetive Salary</li>
+				<li>Opportunity to develop</li>
+				<li>Pension</li>
+				<li>Health Insurance</li>
+				<li>Social occasions</li>
+			</ul>
+			<hr></hr> <!-- horizontal rule-->
+
+			<!-- click on the event button (called review). function review() activated and text appears in a differetn colour-->
+			<h1>Customer Feedback</h1>
+			<h4 id="review">Click button for review</h4>
+			<button class="center" class="btn btn-primary active" onclick="review()">See Review</button>
+		
+
+
+		</article>
+		
+	</section>
+	
+	<!--footer for the webpage, all html with footer tag in that section on webpage-->
+	<footer>
+	
+		<h6>Contact details: info@biomedinc.com</h6>
+		<h6> Follow us on Social Media</h6>
+		
+		<!-- create div to hold a tag and link to external site
+		click on the logo and user brought to page in new window-->
+		<div>
+			<a href="https://www.facebook.com/" target="_blank">
+				<img src="fb.png" alt="Facebook Logo" class="fb">
+			</a>
+		</div>
+	</footer>
+
+
+
+	
+</body>	
+</html> 
+
+
+
+
+
+
+
+
+
+
+

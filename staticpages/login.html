@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login Page</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style type="text/css">							/* add styling - css */
+	body{ 										/* add a background image to the body of webpage*/
+		background-image: url("background.jpg"); 	
+		background-size: cover; 				/* image resized and covers the entire page*/
+	}
+		
+	h1 {										
+		color:black;
+	}
+		
+	.text{										
+		text-align: center;						
+		color:black;
+	}
+	
+	.serif{										/* class called serif */
+		font-family: "Times New Roman";			/*"class="serif will be used to easily keep format as times 	new roman throughout webpage*/				
+	}
+	
+	input[type=button] {						/* anywhere there is a input with type=button*/
+		background-color: lightblue;			/* background colour of  button = lightblue */
+		color: white;							/* Button writing on white */
+		width: 100px;							
+		height: 40px;							
+		cursor: pointer							/* cursor becomes point when hovering on button */
+		
+	}
+	
+
+</style>
+<script>
+/* create function called validate login which takes the the information entered into the input boxes
+document.getElementById.value takes the input from the user
+if & if else statements to compare user input to expected & if field is empty
+if details wrong - try again
+if correct - new window opens withs linking to website homepage*/
+
+
+	function validateLogin() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		if (username == "" || password == "") {
+			alert("Fields should not be empty");
+		} else if (username == "Kevind11" && password == "galway") {
+			alert("LOGIN SUCCESSFUL");
+			window.location = "website.html";
+			return;
+		} else {
+			alert("Username and/or password are incorrect, please enter the valid details");
+		}
+		}
+</script>
+
+
+</head>
+<body>
+
+	<header>
+			<h1 align="center" class="serif">Login Page</h1>
+	</header>
+<!-- div created to allow text be enteres-->
+	<div id="text" class="serif">								
+		<h1 align="center">Welcome to Biomechanics Inc.</h1>
+		<h1 align="center">Login to access personal account</h1>
+	</div>
+		
+	<form align="center">
+		<br>
+		<!-- input boxes for user. id username & id password taken from input and used to validate details-->
+		<!-- placeholder allows detail to be printed in the input boxes-->
+		<b>Username: </b><br>
+        <input type="text" name="username" placeholder="Enter Username" id="username"><br>
+        <b>Password: </b><br>
+        <input type="password" name="password" placeholder="Enter Password" id="password" /><br>
+		<br/>
+		<!-- onclick = once the login button is clicked that validate login is called-->
+		<input type="button" class="btn btn-primary active" value="Login" onclick="validateLogin()"/>
+		
+
+	</form>
+
+</body>
+</html>

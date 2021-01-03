@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path='', static_folder='staticpages')
 # #curl "http://127.0.0.1:5000/
 @app.route('/')
 def index():
-   return "Hello, welcome to server"
+   return "Hello, welcome to the flask server, please go to  http://127.0.0.1:5000/login.html to access website content."
 
 # get all employees
 #curl "http://127.0.0.1:5000/employees"
@@ -19,7 +19,7 @@ def getAll():
     results = employeeDAO.getAll()
     return jsonify(results)
 
-#findById
+#find employee by id
 #curl "http://127.0.0.1:5000/employees/"
 @app.route('/employees/<int:id>')
 def findById(id):
@@ -44,7 +44,7 @@ def create():
 
     return jsonify(employeeDAO.create(employee))
 
-#update an employee
+#update an employee by id
 #curl  -i -H "Content-Type:application/json" -X PUT -d "{\"s_name\":\"Owens\",\"age\":45,\"emp_role\":\"FIN\"}" http://127.0.0.1:5000/employees/4
 @app.route('/employees/<int:id>', methods=['PUT'])
 def update(id):
@@ -67,7 +67,7 @@ def update(id):
     employeeDAO.update(currentEmployee)
     return jsonify(currentEmployee)
         
-# delete an employee
+# delete an employee by id
 # curl -X DELETE http://127.0.0.1:5000/employees/6   
 @app.route('/employees/<int:id>' , methods=['DELETE'])
 def delete(id):
